@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../assets/image/logo.png";
 function Navbar() {
   return (
-    <div className="navbar bg-main text-light">
+    <div className="absolute navbar bg-transparent text-main z-10 font-poppins">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown ">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ function Navbar() {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-dark"
           >
             <li>
               <a>Homepage</a>
@@ -39,12 +39,12 @@ function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <Link to="" className="btn btn-ghost normal-case text-xl">
-          Digi-Lab
+        <Link to="" className="btn btn-ghost normal-case text-xl text-main">
+          <img src={logo} alt="" className="h-full" />
         </Link>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle">
+        <button className="btn btn-ghost btn-circle md:visible hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -80,7 +80,7 @@ function Navbar() {
         </button>
         <Link
           to="Authentication"
-          className="btn mx-2 bg-second text-light border-none"
+          className="btn btn-sm text-[10px] mx-2 bg-main text-light border-none"
         >
           Login
         </Link>

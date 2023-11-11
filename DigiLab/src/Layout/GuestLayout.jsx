@@ -4,7 +4,7 @@ import Footer from "../Component/Footer";
 
 const GuestLayout = () => {
   return (
-    <div className="font-poppins">
+    <div className="font-koulen bg-light text-dark">
       <Navbar />
       <Outlet />
       <Footer />

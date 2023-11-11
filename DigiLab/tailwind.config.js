@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: (theme) => ({
+        logo3d: `url("./src/assets/image/logo3d.png")`,
+      }),
+    },
     colors: {
       main: "#2CAAEA",
       second: "#FCCB35",
@@ -11,6 +15,7 @@ export default {
     },
     fontFamily: {
       poppins: ["Poppins"],
+      koulen: ["koulen"],
     },
   },
   plugins: [require("daisyui")],
