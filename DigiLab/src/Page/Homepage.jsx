@@ -20,8 +20,8 @@ function Homepage() {
       </div>
       <div className=" lg:w-[80%] lg:flex lg:flex-col lg:justify-center lg:items-center">
         <ValueProposition />
-        <ValueProposition />
-        <ValueProposition />
+        {/* <ValueProposition />
+        <ValueProposition /> */}
       </div>
     </div>
   );

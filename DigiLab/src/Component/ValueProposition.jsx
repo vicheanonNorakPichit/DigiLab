@@ -7,9 +7,9 @@ function ValueProposition() {
         <img src={heroBg} alt="" />
       </figure>
       <div className="card-body rounded-b-3xl lg:w-[50%] bg-main lg:rounded-r-3xl lg:rounded-l-none">
-        <h2 className="card-title text-second">New album is released!</h2>
+        <h2 className="card-title text-second">Join Now</h2>
         <p className="text-light">
-          Click the button to listen on Spotiwhy app.
+          Group Experiment
         </p>
       </div>
     </div>
