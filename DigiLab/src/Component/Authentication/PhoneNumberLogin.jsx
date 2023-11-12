@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { auth } from "../../firebase/firebase.config";
-import { BsTelephoneFill, BsFillShieldLockFill } from "react-icons/bs";
+import { BsFillShieldLockFill } from "react-icons/bs";
 import OTPInput from "otp-input-react";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { toast } from "react-hot-toast";
@@ -15,13 +15,16 @@ function PhoneNumberLogin() {
   const [showOTP, setShowOTP] = useState(false);
   const [loading, setLoading] = useState(false);
   const [valid, setValid] = useState(false);
-  function onSignupTel() {
+  let updatedUser;
+
+  async function onSignupTel() {
     toast.dismiss();
     setLoading(true);
-    onCaptchaVerify();
+    await onCaptchaVerify();
 
     const appVerifier = window.recaptchaVerifier;
     const formatPh = "+" + ph;
+    console.log(formatPh);
 
     signInWithPhoneNumber(auth, formatPh, appVerifier)
       .then((confirmationResult) => {
@@ -39,22 +42,13 @@ function PhoneNumberLogin() {
   }
 
   function onCaptchaVerify() {
-    if (!window.recaptchaVerifier) {
-      // toast.loading("Waiting for Captcha to be Complete!");
-      window.recaptchaVerifier = new RecaptchaVerifier(
-        "recaptcha-container",
-        {
-          size: "invisible",
-          callback: (response) => {
-            onSignupTel();
-          },
-          "expired-callback": () => {
-            setLoading(false);
-          },
-        },
-        auth
-      );
-    }
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
+      size: "invisible",
+      callback: (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        console.log("prepared phone auth process");
+      },
+    });
   }
 
   function onOTPVerify() {
@@ -64,14 +58,14 @@ function PhoneNumberLogin() {
       .then((userCredential) => {
         const SetNewUser = async () => {
           updatedUser = {
-            email: userCredential.user.email,
             phone: userCredential.user.phoneNumber,
             role: "user",
             uid: userCredential.user.uid,
             username: userCredential.user.displayName,
             createdDate: userCredential.user.metadata.creationTime,
           };
-          await setDoc(doc(db, "user", updatedUser.uid), updatedUser);
+          console.log(updatedUser);
+          await setDoc(doc(db, "User", updatedUser.uid), updatedUser);
         };
 
         if (
@@ -79,6 +73,7 @@ function PhoneNumberLogin() {
           userCredential.user.metadata.lastSignInTime
         ) {
           SetNewUser();
+          console.log("login");
         }
 
         setUser(userCredential.user);
@@ -87,7 +82,8 @@ function PhoneNumberLogin() {
       .catch((error) => {
         const errorCode = error.code;
         toast.error("Error " + errorCode);
-        console.log(errorCode);
+        console.log("Error " + error.code);
+        console.log(confirmationResult);
         setLoading(false);
       });
   }
@@ -104,7 +100,7 @@ function PhoneNumberLogin() {
   };
 
   return showOTP ? (
-    <div>
+    <div className="text-main font-poppins">
       <label htmlFor="otp" className="text-center block mb-3 mt-1">
         {" "}
         Log In / Sign Up{" "}
@@ -124,7 +120,8 @@ function PhoneNumberLogin() {
         otpType="number"
         disabled={false}
         autoFocus
-        className="otp-container"
+        inputStyles={{ background: "#ececec" }}
+        className="text-main font-extrabold"
       ></OTPInput>
 
       <button
@@ -166,10 +163,10 @@ function PhoneNumberLogin() {
       </form>
       <div className="form-control mt-6">
         <button
+          id="sign-in-button"
           className="btn bg-main border-none text-light font-thin rounded-t-none"
           onClick={() => {
-            console.log(ph);
-            setShowOTP(true);
+            onSignupTel();
           }}
         >
           ផ្ញើលេខកូដ <span className="font-poppins font-bold">OTP</span>{" "}
