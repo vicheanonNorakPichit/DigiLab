@@ -8,6 +8,7 @@ const GuestLayout = () => {
       <Navbar />
       <Outlet />
       <Footer />
+      
     </div>
   );
 };

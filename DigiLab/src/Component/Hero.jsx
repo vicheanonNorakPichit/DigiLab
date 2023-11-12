@@ -13,8 +13,11 @@ function Hero(props) {
             {props.text}
           </p>
           <button className="btn bg-second text-light border-none">
+          <h1 className="mb-5 text-5xl font-bold text-main">{props.title}</h1>
+          <p className="mb-5 text-dark">{props.text}</p>
+          {/* <button className="btn bg-second text-light border-none">
             {props.buttonText}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
