@@ -18,7 +18,7 @@ function Authentication() {
           </p>
         </div>
         {phone ? <PhoneNumberLogin /> : <EmailPasswordLogin />}
-        <div className="">
+        <div className="font-poppins text-main">
           <button
             onClick={() => {
               setPhone(!phone);

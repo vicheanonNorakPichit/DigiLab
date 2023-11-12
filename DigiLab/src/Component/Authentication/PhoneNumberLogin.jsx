@@ -169,6 +169,7 @@ function PhoneNumberLogin() {
             onSignupTel();
           }}
         >
+          {loading && <Loading />}
           ផ្ញើលេខកូដ <span className="font-poppins font-bold">OTP</span>{" "}
           ទៅកាន់លេខទូរស័ព្ទ
         </button>
