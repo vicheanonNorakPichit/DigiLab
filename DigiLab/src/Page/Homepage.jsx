@@ -16,7 +16,6 @@ function Homepage() {
         // buttonText="Click Me"
       />
       <div className="grid grid-cols-3 gap-4">
-        <Subject />
         <Class />
         <Class />
         <Class />

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Title from "../Title";
 import MainButton from "../MainButton";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/firebase.config";
 
-function EmailPasswordLogin() {
+function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const signIn = (e) => {
+
+  const signUp = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
       })
@@ -17,12 +17,10 @@ function EmailPasswordLogin() {
         console.log(error);
       });
   };
-
   return (
-    <div className=" flex flex-col justify-center items-center">
-      <Title title="ចូលដោយបំពេញអុីមែលនិងលេខកូដសម្ងាត់" />
+    <div className="w-full p-20 flex justify-center items-center">
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-light ">
-        <form className="card-body" onSubmit={signIn}>
+        <form className="card-body" onSubmit={signUp}>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -31,10 +29,10 @@ function EmailPasswordLogin() {
               type="email"
               placeholder="email"
               className="input input-bordered"
-              value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              value={email}
               required
             />
           </div>
@@ -46,20 +44,16 @@ function EmailPasswordLogin() {
               type="password"
               placeholder="password"
               className="input input-bordered"
-              value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
+              value={password}
               required
             />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
           </div>
-          <div className="form-control mt-6">
-            <MainButton text="Login" type="submit" />
+
+          <div className="form-control mt-6" type="Submit">
+            <MainButton text="Create Account" />
           </div>
         </form>
       </div>
@@ -67,4 +61,4 @@ function EmailPasswordLogin() {
   );
 }
 
-export default EmailPasswordLogin;
+export default SignUp;

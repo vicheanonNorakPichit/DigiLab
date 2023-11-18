@@ -4,6 +4,8 @@ import AdminLayout from "./Layout/AdminLayout";
 import Authentication from "./Page/Authentication";
 import Homepage from "./Page/Homepage";
 import AdminLogin from "./Page/Admin/AdminLogin";
+import SignUp from "./Component/Authentication/SignUp";
+import Profile from "./Component/Authentication/Profile";
 
 const BasicRoutes = {
   children: [
@@ -21,7 +23,17 @@ const BasicRoutes = {
 const router = createBrowserRouter([
   {
     element: <GuestLayout />,
-    children: [...BasicRoutes.children],
+    children: [
+      ...BasicRoutes.children,
+      {
+        path: "SignUp",
+        element: <SignUp />,
+      },
+      {
+        path: "Profile",
+        element: <Profile />,
+      },
+    ],
   },
   {
     path: "Admin",

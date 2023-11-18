@@ -1,33 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import EmailPasswordLogin from "../Component/Authentication/EmailPasswordLogin";
 import PhoneNumberLogin from "../Component/Authentication/PhoneNumberLogin";
+import { Link } from "react-router-dom";
+
+import Profile from "../Component/Authentication/Profile";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase/firebase.config";
 
 function Authentication() {
-  const [phone, setPhone] = useState(true);
-
+  const [phone, setPhone] = useState(false);
+  const [user, setUser] = useState({});
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
   return (
-    <div className="hero min-h-screen">
-      <div className="hero-content flex-col lg:flex-row ">
-        <div className="text-center lg:mr-20">
-          <h1 className="lg:text-5xl text-3xl font-bold text-second">
-            <span className="text-sec mx-5 text-main">ធ្វើការពិសោធន៍</span>
-            ឥឡូវនេះ!!!
-          </h1>
-          <p className="py-6 lg:text-lg text-sm font-thin text-main">
-            ចាប់ផ្តើមធ្វើការពិសោធន៍បានដោយត្រឹមតែចូលប្រើប្រាស់លេខទូរស័ព្ទរបស់អ្នក
-          </p>
+    <div>
+      {user ? (
+        <Profile email={user?.email} />
+      ) : (
+        <div className="hero min-h-screen mt-16">
+          <div className="hero-content flex-col lg:flex-row ">
+            {phone ? <PhoneNumberLogin /> : <EmailPasswordLogin />}
+            <div className="font-poppins text-main">
+              <button
+                onClick={() => {
+                  setPhone(!phone);
+                }}
+              >
+                Switch Login
+              </button>
+            </div>
+            <div className="font-poppins text-main">
+              <Link to="../SignUp" className="btn ">
+                អត់ទាន់មានគណនី?
+              </Link>
+            </div>
+          </div>
         </div>
-        {phone ? <PhoneNumberLogin /> : <EmailPasswordLogin />}
-        <div className="font-poppins text-main">
-          <button
-            onClick={() => {
-              setPhone(!phone);
-            }}
-          >
-            Switch Login
-          </button>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

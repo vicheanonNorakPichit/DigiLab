@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/image/logo.png";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../firebase/firebase.config";
+
 function Navbar() {
+  const [user, setUser] = useState({});
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
+
+  const logOut = async () => {
+    await signOut(auth);
+  };
+
   return (
-    <div className="absolute navbar bg-transparent text-main z-10 font-poppins">
+    <div className="absolute navbar bg-transparent text-main z-10 font-poppins h-20">
       <div className="navbar-start">
         <div className="dropdown ">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -39,8 +51,8 @@ function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <Link to="" className="btn btn-ghost normal-case text-xl text-main">
-          <img src={logo} alt="" className="h-full" />
+        <Link>
+          <img src={logo} alt="" className=" w-32 h-fit" />
         </Link>
       </div>
       <div className="navbar-end">
@@ -78,12 +90,23 @@ function Navbar() {
             </svg>
           </div>
         </button>
-        <Link
-          to="Authentication"
-          className="btn btn-sm text-[10px] mx-2 bg-main text-light border-none"
-        >
-          Login
-        </Link>
+
+        {user ? (
+          <Link
+            to="Authentication"
+            className="btn btn-sm text-[10px] mx-2 bg-main text-light border-none"
+            onClick={logOut}
+          >
+            Logout
+          </Link>
+        ) : (
+          <Link
+            to="Authentication"
+            className="btn btn-sm text-[10px] mx-2 bg-main text-light border-none"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
