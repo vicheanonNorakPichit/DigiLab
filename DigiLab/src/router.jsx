@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import GuestLayout from "./Layout/GuestLayout";
 import AdminLayout from "./Layout/AdminLayout";
+import AdminLayout from "./Layout/AdminLayout";
 import Authentication from "./Page/Authentication";
 import Homepage from "./Page/Homepage";
 import AdminLogin from "./Page/Admin/AdminLogin";
@@ -16,6 +17,14 @@ const BasicRoutes = {
     {
       path: "Authentication",
       element: <Authentication />,
+    },
+    {
+      path: "ExperimentList",
+      element: <ExperimentList />,
+    },
+    {
+      path: "AboutUs",
+      element: <AboutUs />,
     },
   ],
 };

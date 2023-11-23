@@ -39,13 +39,13 @@ function Navbar() {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-dark"
           >
             <li>
-              <a>Homepage</a>
+              <a>គីមីវិទ្យា</a>
             </li>
             <li>
-              <a>Portfolio</a>
+              <a>រូបវិទ្យា</a>
             </li>
             <li>
-              <a>About</a>
+              <a>ផែនដីវិទ្យា</a>
             </li>
           </ul>
         </div>
@@ -54,8 +54,13 @@ function Navbar() {
         <Link>
           <img src={logo} alt="" className=" w-32 h-fit" />
         </Link>
+        {/* <Link className="mx-5 hover:font-bold hover:translate-y-1 transition-all">
+          Contact
+        </Link> */}
       </div>
+
       <div className="navbar-end">
+        <button className="btn btn-ghost btn-circle md:visible hidden">
         <button className="btn btn-ghost btn-circle md:visible hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
