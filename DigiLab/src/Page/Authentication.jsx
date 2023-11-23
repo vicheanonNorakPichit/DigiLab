@@ -1,39 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+import EmailPasswordLogin from "../Component/Authentication/EmailPasswordLogin";
+import PhoneNumberLogin from "../Component/Authentication/PhoneNumberLogin";
 
 function Authentication() {
+  const [phone, setPhone] = useState(true);
+
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center">
+    <div className="hero min-h-screen">
+      <div className="hero-content flex-col lg:flex-row ">
+        <div className="text-center lg:mr-20">
           <h1 className="lg:text-5xl text-3xl font-bold text-second">
-            Login now!
+            <span className="text-sec mx-5 text-main">ធ្វើការពិសោធន៍</span>
+            ឥឡូវនេះ!!!
           </h1>
-          <p className="py-6 lg:text-lg text-sm text-dark">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+          <p className="py-6 lg:text-lg text-sm font-thin text-main">
+            ចាប់ផ្តើមធ្វើការពិសោធន៍បានដោយត្រឹមតែចូលប្រើប្រាស់លេខទូរស័ព្ទរបស់អ្នក
           </p>
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm bg-main bg-opacity-50">
-          <form className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-bold text-light">
-                  Phone Number
-                </span>
-              </label>
-              <input
-                type="phone"
-                placeholder="phone number"
-                className="input input-bordered"
-                required
-              />
-            </div>
-
-            <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
-            </div>
-          </form>
+        {phone ? <PhoneNumberLogin /> : <EmailPasswordLogin />}
+        <div className="font-poppins text-main">
+          <button
+            onClick={() => {
+              setPhone(!phone);
+            }}
+          >
+            Switch Login
+          </button>
         </div>
       </div>
     </div>

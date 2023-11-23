@@ -1,50 +1,53 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../assets/image/logo.png";
 function Navbar() {
   return (
-    <div className="navbar bg-main text-light">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h7"
-              />
-            </svg>
-          </label>
+    <div className="absolute navbar my-5 bg-transparent text-main z-10 font-poppins ">
+      <div className="navbar-start ml-40  text-justify">
+        <Link
+          to=""
+          className="btn hover:bg-transparent bg-transparent border-none normal-case text-xl text-main"
+        >
+          <img src={logo} alt="" className=" w-36 object-fill" />
+        </Link>
+      </div>
+      <div className="navbar-center hidden lg:contents mx:5">
+        <Link className=" min-w-fit hover:font-bold mx-5 hover:translate-y-1 transition-all">
+          ទំព័រដើម
+        </Link>
+        <div className="dropdown dropdown-hover ">
+          <div
+            tabIndex={0}
+            className=" text-center w-40 mx-5 hover:translate-y-1 transition-all hover:font-bold"
+          >
+            មុខវិជ្ជាពិសោធន័
+          </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Homepage</a>
+              <a>គីមីវិទ្យា</a>
             </li>
             <li>
-              <a>Portfolio</a>
+              <a>រូបវិទ្យា</a>
             </li>
             <li>
-              <a>About</a>
+              <a>ផែនដីវិទ្យា</a>
             </li>
           </ul>
         </div>
-      </div>
-      <div className="navbar-center">
-        <Link to="" className="btn btn-ghost normal-case text-xl">
-          Digi-Lab
+        <Link className=" min-w-fit mx-5 hover:font-bold hover:translate-y-1 transition-all">
+          ព័ត៍មាន{" "}
         </Link>
+        {/* <Link className="mx-5 hover:font-bold hover:translate-y-1 transition-all">
+          Contact
+        </Link> */}
       </div>
+
       <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle">
+        <button className="btn btn-ghost btn-circle md:visible hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -80,7 +83,7 @@ function Navbar() {
         </button>
         <Link
           to="Authentication"
-          className="btn mx-2 bg-second text-light border-none"
+          className="btn btn-md text-[12px] mx-2 bg-main text-light border-none"
         >
           Login
         </Link>

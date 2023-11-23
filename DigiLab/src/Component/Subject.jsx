@@ -1,25 +1,23 @@
-import React from 'react'
-import chemistry1 from "../assets/image/chemistry1.jpg";
-function Subject() {
+import React from "react";
+import Title from "./Title";
+import { Link } from "react-router-dom";
+
+function Subject(props) {
   return (
-    <div>
-        <div className="hover:bg-light">
-        
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <figure className="px-10 pt-10">
-                    <img src={chemistry1} alt="" className="rounded-xl" />
-                </figure>
-                <div className="card-body items-center text-center">
-                    {/* <h2 className="card-title">Shoes!</h2>
+    <Link className="flex flex-col gap-5" to={"experimentList"}>
+      <span className="text-2xl text-main font-bold">{props.text}</span>
+      <div
+        className="card w-80 bg-base-100 shadow-xl h-80 bg-cover flex items-center bg-center "
+        style={{ backgroundImage: `url(${props.image})` }}
+      >
+        <div className="card-body items-center text-center">
+          {/* <h2 className="card-title">Shoes!</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p> */}
-                    <div className="card-actions">
-                        <button className="btn btn-primary">Chemistry</button>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-  )
+        <div className="card-actions"></div>
+      </div>
+    </Link>
+  );
 }
 
-export default Subject
+export default Subject;
