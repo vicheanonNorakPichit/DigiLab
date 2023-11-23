@@ -2,20 +2,32 @@ import React, { useState } from "react";
 import MainButton from "../MainButton";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/firebase.config";
+import { db } from "../../firebase/firebase.config";
+import { collection, addDoc } from "firebase/firestore";
 
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signUp = (e) => {
+  const signUp = async (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then(async (userCredential) => {
+        let updatedUser = {
+          email: userCredential.user.email,
+          phone: userCredential.user.phoneNumber,
+          role: "user",
+          uid: userCredential.user.uid,
+          username: userCredential.user.displayName,
+          createdDate: userCredential.user.metadata.creationTime,
+        };
+        await addDoc(collection(db, "User"), updatedUser);
+        console.log(updatedUser);
       })
       .catch((error) => {
         console.log(error);
       });
+    window.location.replace("/Authentication");
   };
   return (
     <div className="w-full p-20 flex justify-center items-center">
