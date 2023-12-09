@@ -35,21 +35,33 @@ function Homepage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 text-main">
-        <Subject image={chemistry1} text="Chemistry" />
-        <Subject text="Physics" image={physic} />
-        <Subject text="Geography" image={earth1} />
+        <Subject image={chemistry1} text="គីមីវិទ្យា" />
+        <Subject text="រូបវិទ្យា" image={physic} />
+        <Subject text="ផែនដីវិទ្យា" image={earth1} />
       </div>
       {/* <div className=" lg:w-[80%] lg:flex lg:flex-col lg:justify-center lg:items-center">
         <ValueProposition />
         <ValueProposition />
         <ValueProposition /> 
       </div>*/}
-      <div className="">
+      <div className="text-main">
         <Hero title="ហេតុអ្វីគួរជ្រើសរើសធ្វើពិសោធន៌តាម Digi-Lab?" />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <Feature image={cost1} title="តម្លៃសមរម្យ" text="តម្លៃសមរម្យគួរ" />
-          <Feature image={quality} text="គុណភាពនៃការអប់រំ" />
-          <Feature image={accessible} text="ភាពងាយស្រួល" />
+          <Feature
+            image={cost1}
+            title="តម្លៃសមរម្យ"
+            text="ចំណាយត្រឹមតែ1.5$ ក្នុងមួយខែដើម្បីធ្វើការពិសោធន៌"
+          />
+          <Feature
+            image={quality}
+            title="គុណភាពនៃការអប់រំ"
+            text="យល់ពីដំណើរការនៃការពិសោធន៌កាន់តែច្បាស់"
+          />
+          <Feature
+            image={accessible}
+            title="ភាពងាយស្រួល"
+            text="អាចធ្វើការពិសោធន៌គ្រប់ពេលវេលា គ្រប់ទិកន្លែង"
+          />
         </div>
       </div>
     </div>

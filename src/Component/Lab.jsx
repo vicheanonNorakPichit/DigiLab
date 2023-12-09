@@ -3,7 +3,7 @@ import React from "react";
 function Lab() {
   return (
     <div className=" grid gap-4 grid-cols-2 items-center">
-      <div className="collapse collapse-arrow bg-base-200 my-8">
+      <div className="collapse collapse-open bg-base-200 my-8">
         <input type="radio" name="my-accordion-2" checked="checked" />
         <div className="collapse-title text-xl font-medium">
           ជំពូកទី ១ មេរៀនទី ១
@@ -13,7 +13,7 @@ function Lab() {
         </div>
       </div>
 
-      <div className="collapse collapse-arrow bg-base-200 my-8">
+      <div className="collapse collapse-open bg-base-200 my-8">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           ជំពូកទី ២ មេរៀនទី ១
@@ -23,7 +23,7 @@ function Lab() {
         </div>
       </div>
 
-      <div className="collapse collapse-arrow bg-base-200 my-8">
+      <div className="collapse collapse-open bg-base-200 my-8">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           ជំពូកទី ២ មេរៀនទី ១
@@ -33,7 +33,7 @@ function Lab() {
         </div>
       </div>
 
-      <div className="collapse collapse-arrow bg-base-200 my-8">
+      <div className="collapse collapse-open bg-base-200 my-8">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           ជំពូកទី ២ មេរៀនទី ១
@@ -42,7 +42,7 @@ function Lab() {
           <p>ប្រតិកម្មរវាងលោហៈអាលុយមីញ៉ូមជាមួយសូលុយស្យុងអាស៊ីតក្លរីឌ្រិចរាវ</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200 my-8">
+      <div className="collapse collapse-open bg-base-200 my-8">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           ជំពូកទី ២ មេរៀនទី ២
@@ -51,7 +51,7 @@ function Lab() {
           <p>លក្ខណៈរូប និងលក្ខណៈគីមីរបស់លោហៈអាល់កាឡាំង</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200 my-8">
+      <div className="collapse collapse-open bg-base-200 my-8">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           ជំពូកទី ២ មេរៀនទី ២
@@ -60,7 +60,7 @@ function Lab() {
           <p>លក្ខណៈរូប និងលក្ខណៈគីមីរបស់លោហៈទង់ដែងស្ថិតក្នុងក្រុមលោហៈឆ្លង</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200 my-8">
+      <div className="collapse collapse-open bg-base-200 my-8">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           ជំពូកទី ៣ មេរៀនទី ១
@@ -69,7 +69,7 @@ function Lab() {
           <p>ការចម្លងចរន្ដអគ្គិសនីនៃសមាសធាតុអ៊ីយ៉ុង និងសមាសធាតុកូវ៉ាឡង់</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200 my-8">
+      <div className="collapse collapse-open bg-base-200 my-8">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           ជំពូកទី ៣ មេរៀនទី ២

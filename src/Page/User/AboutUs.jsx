@@ -1,16 +1,29 @@
 import React from "react";
+import Hero from "../../Component/Hero";
+import Card from "../../Component/Card";
+
+// import Banner from "../assets/image/Banner.jpg";
 
 function AboutUs() {
   return (
     <div className="w-full h-full bg-light font-poppins flex flex-col  p-8 pt-6 items-center">
-      <div className="p-[10%] pb-20 grid grid-cols-1 lg:grid-cols-3 gap-12 text-main"></div>
+      <div className="p-[10%] pb-20 grid grid-cols-1 lg:grid-cols-3 gap-12 text-main">
+        {/* <Card image={Banner} title="អនុវត្ដការពិសោធន៌" />
+        <Card image={Banner} title="ពិសោធន៌ជាក្រុម" />
+        <Card image={Banner} title="សំណួរ-ចម្លើយ" /> */}
+
+        <Hero
+          font="popins"
+          title="អំពីយើង"
+          text="Digi-lab គឺជាកម្មវិធីសិក្សាមួយដែលអាចឱ្យសិស្សានុសិស្ស លោកគ្រូ អ្នកគ្រូអនុវត្តន៍ការពិសោធន៍តាមបែបឌីជីថលលើមុខវិជ្ជាវិទ្យាសាស្ត្រពិត 
+        នៅកម្រិតថ្នាក់វិទ្យាល័យពីទី១០-១២។"
+        />
+        <Card />
+      </div>
       <div className="flex flex-col w-full lg:flex-row">
         <div className="grid flex-grow h-32 card bg-base-200 rounded-box place-items-center">
           <title Digi-Lab />
-          <h2 className="text-justify">
-            Digi-lab គឺជាកម្មវិធីសិក្សាមួយ ដែលអាចឱ្យសិស្សានុសិស្ស លោកគ្រូ
-            អ្នកគ្រូអនុវត្តន៍ការពិសោធន៍តាមបែប ឌីជីថល
-          </h2>
+          <h2 className="text-justify">Digi-lab</h2>
         </div>
         <div className="divider lg:divider-horizontal"></div>
         <div className="grid flex-grow h-32 card rounded-box place-items-center">
