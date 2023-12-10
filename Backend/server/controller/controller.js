@@ -10,16 +10,18 @@ exports.create = (req, res) => {
   // new subject
   const subject = new Subjectdb({
     subject_name: req.body.subject_name,
-    active: req.body.active
+    active: req.body.active,
   });
 
   // save subject in database
   subject
     .save(subject)
-    .then((data) => res.send(data))
+    .then((data) => {
+      // res.send(data);
+      res.redirect("/add-subject");
+    })
     .catch((err) => {
-      res.status(500).send({ message: 
-err.message }) ||
+      res.status(500).send({ message: err.message }) ||
         "Some errors occured when creating operation";
     });
 };
