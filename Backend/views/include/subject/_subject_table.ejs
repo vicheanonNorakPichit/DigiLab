@@ -6,7 +6,7 @@
 <main>
   <div>
     <form action="">
-      <table>
+      <table class="table">
         <thead>
           <tr>
             <th>ID</th>
@@ -25,7 +25,7 @@
                     <a href="update-subject?subject_id=<%= subjects[i]._id%>" class="btn border-shadow update">
                     <span class="text-gradient">edit</span>
                     </a>
-                    <a href="#" class="btn border-shadow delete">
+                    <a href="#" class="btn border-shadow delete" data-id=<%= subjects[i]._id %>>
                     <span class="text-gradient">delete</span>
                     </a>
                 </td>

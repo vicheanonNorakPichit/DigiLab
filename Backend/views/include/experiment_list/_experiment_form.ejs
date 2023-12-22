@@ -1,0 +1,106 @@
+<form action="/api/experiments" method="POST" id="add_experiment" class="add">
+  
+ <div class="new_experiment">
+  <!-- EXPERIMENT NAME INPUT -->
+    <div class="form-group">
+      <label for="name" class="text-light">Experiment Name</label>
+
+      <input type="text" name="experiment_name" value="" placeholder="" />
+    </div>
+  <!-- /EXPERIMENT NAME INPUT -->
+
+  <!-- GRADE INPUT -->
+    <div class="form-group">
+      <label for="active" class="text-light">Grade</label>
+      <div class="radio inline">
+        <input type="radio" name="grade" value="10" />
+        <label for="grade" class="text-light">10</label>
+      </div>
+      <div class="radio inline">
+        <input type="radio" name="grade" value="11" />
+        <label for="grade" class="text-light">11</label>
+      </div>
+      <div class="radio inline">
+        <input type="radio" name="grade" value="12" />
+        <label for="grade" class="text-light">12</label>
+      </div>
+    </div>
+  <!-- / GRADE INPUT -->
+
+  <!-- CHAPTER INPUT -->
+
+    <div class="form-group">
+      <label for="chapter" class="text-light">Chapter</label>
+
+      <input type="text" name="chapter" value="" placeholder="" />
+    </div>
+
+    <!-- / CHAPTER INPUT -->
+
+    <!-- LESSON INPUT -->
+
+    <div class="form-group">
+      <label for="lesson" class="text-light">Lesson</label>
+
+      <input type="text" name="lesson" value="" placeholder="" />
+    </div>
+
+    <!-- / LESSON INPUT -->
+
+    <!-- SUBJECT INPUT -->
+    <div class="form-group">
+      <label for="subject" class="text-light">Subject</label>
+      <div class="radio inline">
+        <input type="radio" name="active" value="Chemistry" />
+        <label for="subject" class="text-light">Chemistry</label>
+      </div>
+      <div class="radio inline">
+        <input type="radio" name="active" value="Mathematics" />
+        <label for="subject" class="text-light">Mathematics</label>
+      </div>
+    </div>
+  <!-- / SUBJECT INPUT -->
+
+  <!-- DESCRIPTION INPUT -->
+    <div class="form-group">
+      <label for="description" class="text-light">Description</label>
+      <textarea type="text" name="description" value="" placeholder="" rows="6"> </textarea>
+    </div>
+  <!-- / DESCRIPTION INPUT  -->
+
+   <!-- PHET URL INPUT -->
+    <div class="form-group">
+      <label for="phet_url" class="text-light">Phet URL</label>
+
+      <input type="text" name="phet_url" value="" placeholder="" />
+    </div>
+  <!-- /PHET URL INPUT -->
+
+  <!-- UNITY SCENE INPUT -->
+    <div class="form-group">
+      <label for="unity_scene" class="text-light">Unity Scene</label>
+
+      <input type="text" name="unity_scene" value="" placeholder="" />
+    </div>
+  <!-- /UNITY SCENE INPUT -->
+
+  <!-- ACTIVE INPUT -->
+    <div class="form-group">
+      <label for="active" class="text-light">Active</label>
+      <div class="radio inline">
+        <input type="radio" name="active" value="true" />
+        <label for="active" class="text-light">true</label>
+      </div>
+      <div class="radio inline">
+        <input type="radio" name="active" value="false" />
+        <label for="active" class="text-light">false</label>
+      </div>
+    </div>
+  <!-- / ACTIVE INPUT -->
+
+    <div class="form-group">
+      <button class="btn text-dark update">Save</button>
+    </div>
+  </div>
+
+</form>

@@ -1,0 +1,24 @@
+<!-- include header -->
+<%- include('../_header') %>
+<!-- /include header -->
+
+<main id="site-main">
+    <div class="container">
+      <div class="box-nav justify-between">
+        <div class="container">
+          <a href="/experiment_list" class="btn">All experiments</a>
+      </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">New Experiment</h2>
+            <span class="text-light">Use the below form to create a new experiment</span>
+        </div>
+        <!-- form handling -->
+        <%- include('./_experiment_form') %>
+        <!--/ form handling -->
+      </div>
+    </div>
+  </main>
+
+<!-- include footer -->
+<%- include('../_footer') %>
+<!-- /include footer -->

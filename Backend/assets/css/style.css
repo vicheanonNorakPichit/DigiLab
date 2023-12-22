@@ -17,7 +17,7 @@
   }
   
   .container {
-    max-width: 1024px;
+    max-width: 100%;
     margin: auto;
     padding: 1.5em;
   }
@@ -55,6 +55,7 @@
   
   .text-light {
     color: var(--light);
+    font-weight: bolder;
   }
   
   .text-gradient {
@@ -65,7 +66,7 @@
   }
   
   #header nav {
-    background-color: #06d6a0;
+    background-color: #2CAAEA;
     padding: 1em 0;
     width: 100%;
   }
@@ -81,17 +82,23 @@ table {
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     width: 100%;
+
 }
 
 thead tr {
-    background-color: #009879;
+    background-color: #2CAAEA;
     color: #ffffff;
     text-align: left;
 }
 
 th,
 td {
-    padding: 20px 15px;
+    padding: 20px 5px;
+    text-align: center;
+}
+
+td .btn{
+  margin: 0 5px;
 }
 
 tbody tr {
@@ -103,7 +110,7 @@ tbody tr:nth-of-type(even) {
 }
 
 tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #2CAAEA;
 }
 
 .table-title {
@@ -117,7 +124,7 @@ tbody tr:last-of-type {
 
 .btn {
     top:50%;
-    background-color:#0a0a23;
+    background-color:#FCCB35;
     color: #fff;
     border:none; 
     border-radius:10px; 
@@ -130,6 +137,7 @@ tbody tr:last-of-type {
 }
 
 .form-title{
+  font-weight: b;
     margin-top: 2em;
 }
 
@@ -142,28 +150,32 @@ tbody tr:last-of-type {
     margin: auto;
 }
 
-#add_subject .form-group , #update_subject{
-    margin: .4em 0;
+.add .form-group , .update .form-group{
+    margin: 1.4em 0;
 }
 
-#add_subject .form-group input[type="text"],#update_subject .form-group input[type="text"] {
-    width: 100%;
+.add .form-group input[type="text"],.update .form-group input[type="text"], .add .form-group textarea[type="text"], .update .form-group textarea[type="text"]  {
+    width: 50%;
     padding: .6em 1em;
-    margin: .5em 0; 
+    margin: 0.5em 0; 
     border: 1px solid var(--border);
     font-size: 1em;
     border-radius: .2em;
+    resize: none;
+    background: #E4E9F7;
+    display: flex;
+    flex-direction: column;
 }
 
-#add_subject .form-group input[type="radio"],#update_subject .form-group input[type="text"] {
-    margin: 1em 2em;
+.add .form-group input[type="radio"], .update .form-group input[type="text"] {
+    margin: 1em 0em;
 }
 
-#add_subject .form-group .btn, 
-#update_subject .form-group .btn {
+.add .form-group .btn, 
+.update .form-group .btn {
     width: 100%;
     padding: .9em 1em;
-    background-color: #06d6a0;
+    background-color: #2CAAEA;
     border: none;
     font-size: 1em;
     cursor: pointer;
@@ -171,11 +183,13 @@ tbody tr:last-of-type {
     margin: .5em 0;
 }
 
-#add_subject .form-group .btn:hover, 
-#update_subject .form-group .btn:hover {
+.add .form-group .btn:hover, 
+.update .form-group .btn:hover {
     background-color: var(--dark);
     color: var(--border);
 }
+
+/* SIDE BAR */
 
 .sidebar{
   position: fixed;
@@ -183,7 +197,7 @@ tbody tr:last-of-type {
   left: 0;
   height: 100%;
   width: 260px;
-  background: #11101d;
+  background: #2CAAEA;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -223,6 +237,8 @@ tbody tr:last-of-type {
 }
 .sidebar.close .nav-links{
   overflow: visible;
+  background: #2CAAEA;
+
 }
 .sidebar .nav-links::-webkit-scrollbar{
   display: none;
@@ -233,7 +249,7 @@ tbody tr:last-of-type {
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: #1d1b31;
+  background: #2CAAEA;
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -277,7 +293,7 @@ tbody tr:last-of-type {
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #1d1b31;
+  background: #2CAAEA;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -335,7 +351,7 @@ tbody tr:last-of-type {
 .one {
   width: 80%;
   margin-left: 10%;
-  background-color: black;
+  background-color: #2CAAEA;
   height: 400px;
 }
 
@@ -346,7 +362,7 @@ tbody tr:last-of-type {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1d1b31;
+  background: #2CAAEA;
   padding: 12px 0;
   transition: all 0.5s ease;
 }
@@ -366,7 +382,7 @@ tbody tr:last-of-type {
   object-fit: cover;
   border-radius: 16px;
   margin: 0 14px 0 12px;
-  background: #1d1b31;
+  background: #2CAAEA;
   transition: all 0.5s ease;
 }
 .sidebar.close .profile-details img{
@@ -389,7 +405,6 @@ tbody tr:last-of-type {
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
@@ -406,7 +421,7 @@ tbody tr:last-of-type {
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
-  color: #11101d;
+  color: #2CAAEA;
   font-size: 35px;
 }
 .home-section .home-content .bx-menu{

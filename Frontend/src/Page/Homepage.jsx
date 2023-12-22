@@ -25,6 +25,7 @@ function Homepage() {
         >
           video
         </video> */}
+    
         <Hero
           title="Digi-Lab Digi-Life Digi-Learn"
           text="Digi-lab គឺជាកម្មវិធីសិក្សាមួយ ដែលអាចឱ្យសិស្សានុសិស្ស លោកគ្រូ អ្នកគ្រូអនុវត្តន៍ការពិសោធន៍តាមបែប ឌីជីថលលើមុខវិជ្ជាវិទ្យាសាស្ត្រពិត 
