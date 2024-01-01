@@ -1,15 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import GuestLayout from "./Layout/GuestLayout";
-import AdminLayout from "./Layout/AdminLayout";
-
 import Authentication from "./Page/Authentication";
 import Homepage from "./Page/Homepage";
 import SignUp from "./Component/Authentication/SignUp";
 import Profile from "./Component/Authentication/Profile";
 
-import ExperimentList from "./Page/User/ExperimentList";
-import AboutUs from "./Page/User/AboutUs";
-import Dashboard from "./Page/Admin/Dashboard";
+import ExperimentList from "./Page/ExperimentList";
+import AboutUs from "./Page/AboutUs";
+import Experiment from "./Page/Experiment";
 
 const BasicRoutes = {
   children: [
@@ -24,6 +22,10 @@ const BasicRoutes = {
     {
       path: "ExperimentList",
       element: <ExperimentList />,
+    },
+    {
+      path: "Experiment/:experiment_id",
+      element: <Experiment />,
     },
     {
       path: "AboutUs",
@@ -44,16 +46,6 @@ const router = createBrowserRouter([
       {
         path: "Profile",
         element: <Profile />,
-      },
-    ],
-  },
-  {
-    path: "Admin",
-    element: <AdminLayout />,
-    children: [
-      {
-        path: "",
-        element: <Dashboard />,
       },
     ],
   },

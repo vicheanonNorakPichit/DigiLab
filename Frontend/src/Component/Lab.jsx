@@ -1,85 +1,50 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import MainButton from "./MainButton";
+import { Link } from "react-router-dom";
 function Lab() {
+  const [data, setData] = useState([]);
+
+  // Get All Labs Data from API
+  // const getLab = () => {
+  //   axios
+  //     .get("http://localhost:3000/api/experiments")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setData(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/experiments")
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
-    <div className=" grid gap-4 grid-cols-2 items-center">
-      <div className="collapse collapse-arrow bg-base-200 my-8">
-        <input type="radio" name="my-accordion-2" checked="checked" />
-        <div className="collapse-title text-xl font-medium">
-          ជំពូកទី ១ មេរៀនទី ១
+    <div className=" grid gap-4 lg:grid-cols-2 grid-cols-1 items-center">
+      {data?.map((lab) => (
+        <div className="card w-full shadow-xl" key={lab}>
+          <div className="card-body">
+            <h2 className="card-title">{lab.experiment_name}</h2>
+            <p>{"ថ្នាក់ទី៖ " + lab.grade}</p>
+            <div className="card-actions justify-end">
+              <Link to={"/experiment/" + lab._id}>
+                <MainButton text="ចាប់ផ្តើម" />
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="collapse-content">
-          <p>ច្បាប់រក្សាម៉ាស់</p>
-        </div>
-      </div>
-
-      <div className="collapse collapse-arrow bg-base-200 my-8">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          ជំពូកទី ២ មេរៀនទី ១
-        </div>
-        <div className="collapse-content">
-          <p>ប្រតិកម្មរវាងលោហៈស័ង្កសី និងអាស៊ីតស៊ុលផួរិច</p>
-        </div>
-      </div>
-
-      <div className="collapse collapse-arrow bg-base-200 my-8">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          ជំពូកទី ២ មេរៀនទី ១
-        </div>
-        <div className="collapse-content">
-          <p>ប្រតិកម្មរវាងម្សៅដែកជាមួយសូលុយស្យុងអាស៊ីតក្លរីឌ្រិច</p>
-        </div>
-      </div>
-
-      <div className="collapse collapse-arrow bg-base-200 my-8">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          ជំពូកទី ២ មេរៀនទី ១
-        </div>
-        <div className="collapse-content">
-          <p>ប្រតិកម្មរវាងលោហៈអាលុយមីញ៉ូមជាមួយសូលុយស្យុងអាស៊ីតក្លរីឌ្រិចរាវ</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200 my-8">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          ជំពូកទី ២ មេរៀនទី ២
-        </div>
-        <div className="collapse-content">
-          <p>លក្ខណៈរូប និងលក្ខណៈគីមីរបស់លោហៈអាល់កាឡាំង</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200 my-8">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          ជំពូកទី ២ មេរៀនទី ២
-        </div>
-        <div className="collapse-content">
-          <p>លក្ខណៈរូប និងលក្ខណៈគីមីរបស់លោហៈទង់ដែងស្ថិតក្នុងក្រុមលោហៈឆ្លង</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200 my-8">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          ជំពូកទី ៣ មេរៀនទី ១
-        </div>
-        <div className="collapse-content">
-          <p>ការចម្លងចរន្ដអគ្គិសនីនៃសមាសធាតុអ៊ីយ៉ុង និងសមាសធាតុកូវ៉ាឡង់</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200 my-8">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          ជំពូកទី ៣ មេរៀនទី ២
-        </div>
-        <div className="collapse-content">
-          <p>ការរលាយចូលគ្នារវាងសារធាតុកូវ៉ាឡង់ និងសារធាតុអ៊ីយ៉ុង</p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
-
 export default Lab;

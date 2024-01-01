@@ -8,6 +8,7 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { toast } from "react-hot-toast";
 import { setDoc, doc } from "firebase/firestore";
 import { Loading } from "../Loading";
+import Title from "../Title";
 
 function PhoneNumberLogin() {
   const [ph, setPh] = useState("");
@@ -134,6 +135,7 @@ function PhoneNumberLogin() {
     </div>
   ) : (
     <div className="card flex-shrink-0 w-full max-w-sm bg-light shadow-2xl ">
+      <Title title="ចូលដោយបំពេញលេខទូរស័ព្ទរបស់អ្នក" />
       <form className="card-body">
         {valid ? (
           <div className="hidden"></div>

@@ -21,7 +21,7 @@ function EmailPasswordLogin() {
   return (
     <div className=" flex flex-col justify-center items-center">
       <Title title="ចូលដោយបំពេញអុីមែលនិងលេខកូដសម្ងាត់" />
-      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-light ">
+      <div className="card w-full max-w-sm shadow-2xl bg-light ">
         <form className="card-body" onSubmit={signIn}>
           <div className="form-control">
             <label className="label">
@@ -30,7 +30,7 @@ function EmailPasswordLogin() {
             <input
               type="email"
               placeholder="email"
-              className="input input-bordered"
+              className="input input-bordered border-4 bg-light"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -45,7 +45,7 @@ function EmailPasswordLogin() {
             <input
               type="password"
               placeholder="password"
-              className="input input-bordered"
+              className="input input-bordered border-4 bg-light"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);

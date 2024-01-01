@@ -18,8 +18,8 @@ function Authentication() {
       {user ? (
         <Profile email={user?.email} />
       ) : (
-        <div className="hero min-h-screen mt-16">
-          <div className="hero-content flex-col lg:flex-row ">
+        <div className="hero min-h-screen">
+          <div className="hero-content flex-col ">
             {phone ? <PhoneNumberLogin /> : <EmailPasswordLogin />}
             <div className="font-poppins text-main">
               <button
@@ -31,7 +31,10 @@ function Authentication() {
               </button>
             </div>
             <div className="font-poppins text-main">
-              <Link to="../SignUp" className="btn ">
+              <Link
+                to="../SignUp"
+                className="btn bg-second border-none hover:bg-main text-light transition-all"
+              >
                 អត់ទាន់មានគណនី?
               </Link>
             </div>

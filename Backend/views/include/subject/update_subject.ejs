@@ -23,17 +23,19 @@
             <input
               type="text"
               name="subject_name"
-              value="<%= subject.subject_name %>"    
+              value="<%= subject.subject_name %>"
             />
           </div>
           <div class="form-group">
             <label for="name" class="text-light">Active</label>
             <div class="radio inline">
-              <input type="radio" name="active" value="true"/>
+              <input type="radio" name="active" value="true" <%= subject.active
+              == true ? 'checked' : '' %>/>
               <label for="active" class="text-light">true</label>
             </div>
             <div class="radio inline">
-              <input type="radio" name="active" value="false"/>
+              <input type="radio" name="active" value="false" <%= subject.active
+              == false ? 'checked' : '' %>/>
               <label for="active" class="text-light">false</label>
             </div>
           </div>

@@ -52,7 +52,7 @@ function Navbar() {
       </div>
       <div className="navbar-center">
         <Link>
-          <img src={logo} alt="" className=" w-32 h-fit" />
+          <img src={logo} alt="" className=" w-16 lg:32 h-fit" />
         </Link>
         {/* <Link className="mx-5 hover:font-bold hover:translate-y-1 transition-all">
           Contact

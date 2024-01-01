@@ -2,12 +2,8 @@ import React from "react";
 
 function Grade(props) {
   return (
-    <div className="indicator">
-      <div className="card  border-solid border-4 bottom-2 rounded-lg h-24 bg-sky-500/100">
-        <div className="card-body">
-          <button className="card-title text-center">{props.text}</button>
-        </div>
-      </div>
+    <div className="card border-solid border-2 h-10 w-20 md:h-16 md:w-24 lg:h-20 lg:w-28 rounded-lg flex justify-center items-center text-xs md:text-sm lg:text-lg">
+      {props.text}
     </div>
   );
 }
