@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 function Feature(props) {
@@ -8,7 +9,7 @@ function Feature(props) {
           className="px-10 pt-10"
           // style={{ backgroundImage: `url(${props.image})` }}
         >
-          <img src={props.image} alt="cost" className="rounded-xl" />
+          <FontAwesomeIcon icon={props.faIcon} className="text-[100px] text-main" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{props.title}</h2>

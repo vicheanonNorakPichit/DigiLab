@@ -1,6 +1,6 @@
 import React from "react";
-import Title from "../Title";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Subject(props) {
   return (
@@ -8,16 +8,11 @@ function Subject(props) {
       className="flex flex-col gap-5 justify-center items-center w-full"
       to={"experimentList"}
     >
-      <span className="text-2xl text-main font-bold">{props.text}</span>
-      <div
-        className="card w-80 bg-base-100 shadow-xl h-80 bg-cover flex items-center bg-center hover:opacity-70 hover:translate-y-4 transition-all"
-        style={{ backgroundImage: `url(${props.image})` }}
-      >
-        <div className="card-body items-center text-center">
-          {/* <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p> */}
+      <div className="card w-72 shadow-xl h-72 flex items-center  hover:opacity-70 hover:translate-y-4 transition-all border-[4px] border-second">
+        <span className="text-4xl text-dark p-4">{props.text}</span>
+        <div className="w-full h-[100%] text-center pt-8">
+          <FontAwesomeIcon icon={props.faIcon} className="text-[140px]" />
         </div>
-        <div className="card-actions"></div>
       </div>
     </Link>
   );

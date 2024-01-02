@@ -14,8 +14,7 @@ export default {
       dark: "#3D3D3D",
     },
     fontFamily: {
-      poppins: ["Poppins"],
-      koulen: ["koulen"],
+      kantumruy: ["Kantumruy Pro", "sans-serif"],
     },
   },
   plugins: [require("daisyui")],
